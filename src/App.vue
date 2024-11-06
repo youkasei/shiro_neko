@@ -5,11 +5,13 @@
 </script>
 
 <template>
-	<Header />
-	<main class="mx-auto min-h-[800px] max-w-[1280px] border-x">
-		<RouterView />
-	</main>
-	<Footer />
+	<div class="bg-white dark:bg-slate-800">
+			<Header />
+		<main class="mx-auto min-h-[800px]">
+			<RouterView />
+		</main>
+		<Footer />
+	</div>
 </template>
 
 <style scoped></style>

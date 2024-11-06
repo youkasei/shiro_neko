@@ -1,9 +1,9 @@
 <template>
 	<div
-		class="flex flex-nowrap min-h-8 w-fit rounded-2xl shadow ring-1 ring-slate-200 px-2 py-1 justify-center items-center cursor-pointer"
+		class="flex flex-nowrap min-h-8 w-fit rounded-2xl shadow ring-1 ring-slate-200 px-2 py-1 justify-center items-center cursor-pointer dark:ring-slate-900"
 	>
-		<sun class="w-6 h-6 mr-4" :is-active="active === 0" @click="dayChange(0)" />
-		<moon class="w-6 h-6" :is-active="active === 1" @click="dayChange(1)" />
+		<sun class="w-6 h-6 mr-4" :is-active="theme==='light'" @click="dayChange('light')" />
+		<moon class="w-6 h-6" :is-active="theme==='dark'" @click="dayChange('dark')" />
 	</div>
 </template>
 
@@ -11,10 +11,16 @@
 	import sun from './icons/sun.vue';
 	import moon from './icons/moon.vue';
 	import { ref } from 'vue';
-	const active = ref<Number>(0);
+	import { storeToRefs } from 'pinia';
 
-	function dayChange(type: Number) {
-		active.value = type;
+	import { useAppStore } from '@/stores/app'
+	import { type Theme } from '@/types/global';
+
+	const appStore = useAppStore()
+	const { theme } = storeToRefs(appStore)
+
+	function dayChange(type: Theme) {
+		appStore.changeTheme(type)
 	}
 </script>
 
