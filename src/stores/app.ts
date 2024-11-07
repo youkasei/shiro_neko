@@ -4,7 +4,7 @@ import { defineStore } from 'pinia'
 import { type Theme } from '../types/global'
 
 export const useAppStore = defineStore('appStore', () => {
-  const theme = ref<Theme>('dark')
+  const theme = ref<Theme>('light')
   const changeTheme = (mode?:Theme):void=>{
     if(mode){
         theme.value = mode

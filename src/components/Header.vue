@@ -14,7 +14,7 @@
 				>{{ item.text }}</RouterLink
 			>
 		</nav>
-		<Search class="ml-24" />
+		<Search class=" ml-48" />
 		<DayChange class="absolute right-12" />
 	</header>
 </template>
