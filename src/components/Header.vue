@@ -1,5 +1,5 @@
 <template>
-	<header class="relative flex shadow-sm min-h-16 items-center px-12 dark:shadow-stone-900">
+	<header class="flex shadow-sm h-14 items-center px-12 dark:shadow-stone-900">
 		<div
 			class="avater w-12 h-12 rounded-full shadow mr-12 text-center leading-10"
 		>
@@ -14,7 +14,7 @@
 				>{{ item.text }}</RouterLink
 			>
 		</nav>
-		<Search class=" ml-24"/>
+		<Search class="ml-24" />
 		<DayChange class="absolute right-12" />
 	</header>
 </template>
